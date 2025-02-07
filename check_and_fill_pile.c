@@ -6,7 +6,7 @@
 /*   By: sudelory <sudelory@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:14:29 by sudelory          #+#    #+#             */
-/*   Updated: 2025/02/04 17:45:24 by sudelory         ###   ########.fr       */
+/*   Updated: 2025/02/07 14:25:51 by sudelory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	check_if_full(int capacity, int size)
 }
 
 // Function to add an element to the top of the stack
-int	fill_top_of_stack(int top, int *array)
+int	fill_top_of_stack(int *top, int *array, int capacity, int element)
 {
-
+	if (check_if_full(capacity, *top + 1))
+		return (-1);
+	array[++(*top)] = element;
+	return (0);
 }
